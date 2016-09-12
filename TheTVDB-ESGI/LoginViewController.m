@@ -19,7 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     [_passwordTextField setText:@"F3B58F92B55594B4"];
 }
 
@@ -62,9 +61,20 @@
           authenticateWithUsername:[_usernameTextField text]
          andUserKey:[_passwordTextField text]
          ];
-        
-        NSLog(@"Tout est OK");
     }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    
+    if (textField == _usernameTextField) {
+        [_passwordTextField becomeFirstResponder];
+    }
+    else {
+        [self login];
+    }
+    
+    return YES;
 }
 
 @end

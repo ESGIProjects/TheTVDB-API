@@ -64,10 +64,8 @@
 				D71B37DD1D86BEAC00E353D4 /* AppDelegate.h */,
 				D71B37DE1D86BEAC00E353D4 /* AppDelegate.m */,
 				D71B37E31D86BEAC00E353D4 /* Main.storyboard */,
-				D71B37F11D86C1A600E353D4 /* LoginViewController.h */,
-				D71B37F21D86C1A600E353D4 /* LoginViewController.m */,
-				D71B37F41D86C9CF00E353D4 /* TVDBApi.h */,
-				D71B37F51D86C9CF00E353D4 /* TVDBApi.m */,
+				D71D14551D872E7D00324913 /* Controllers */,
+				D71D14541D872E7500324913 /* API */,
 				D71B37E61D86BEAC00E353D4 /* Assets.xcassets */,
 				D71B37E81D86BEAC00E353D4 /* LaunchScreen.storyboard */,
 				D71B37EB1D86BEAC00E353D4 /* Info.plist */,
@@ -82,6 +80,24 @@
 				D71B37DB1D86BEAC00E353D4 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D71D14541D872E7500324913 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D71B37F41D86C9CF00E353D4 /* TVDBApi.h */,
+				D71B37F51D86C9CF00E353D4 /* TVDBApi.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		D71D14551D872E7D00324913 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D71B37F11D86C1A600E353D4 /* LoginViewController.h */,
+				D71B37F21D86C1A600E353D4 /* LoginViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +336,7 @@
 				D71B37F01D86BEAC00E353D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
