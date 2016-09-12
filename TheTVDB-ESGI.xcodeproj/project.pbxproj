@@ -1,0 +1,327 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D71B37DC1D86BEAC00E353D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B37DB1D86BEAC00E353D4 /* main.m */; };
+		D71B37DF1D86BEAC00E353D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B37DE1D86BEAC00E353D4 /* AppDelegate.m */; };
+		D71B37E51D86BEAC00E353D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71B37E31D86BEAC00E353D4 /* Main.storyboard */; };
+		D71B37E71D86BEAC00E353D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D71B37E61D86BEAC00E353D4 /* Assets.xcassets */; };
+		D71B37EA1D86BEAC00E353D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71B37E81D86BEAC00E353D4 /* LaunchScreen.storyboard */; };
+		D71B37F31D86C1A600E353D4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B37F21D86C1A600E353D4 /* LoginViewController.m */; };
+		D71B37F61D86C9CF00E353D4 /* TVDBApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B37F51D86C9CF00E353D4 /* TVDBApi.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D71B37D71D86BEAC00E353D4 /* TheTVDB-ESGI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TheTVDB-ESGI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D71B37DB1D86BEAC00E353D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D71B37DD1D86BEAC00E353D4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D71B37DE1D86BEAC00E353D4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D71B37E41D86BEAC00E353D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D71B37E61D86BEAC00E353D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D71B37E91D86BEAC00E353D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D71B37EB1D86BEAC00E353D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D71B37F11D86C1A600E353D4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		D71B37F21D86C1A600E353D4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		D71B37F41D86C9CF00E353D4 /* TVDBApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVDBApi.h; sourceTree = "<group>"; };
+		D71B37F51D86C9CF00E353D4 /* TVDBApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVDBApi.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D71B37D41D86BEAC00E353D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D71B37CE1D86BEAC00E353D4 = {
+			isa = PBXGroup;
+			children = (
+				D71B37D91D86BEAC00E353D4 /* TheTVDB-ESGI */,
+				D71B37D81D86BEAC00E353D4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D71B37D81D86BEAC00E353D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D71B37D71D86BEAC00E353D4 /* TheTVDB-ESGI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D71B37D91D86BEAC00E353D4 /* TheTVDB-ESGI */ = {
+			isa = PBXGroup;
+			children = (
+				D71B37DD1D86BEAC00E353D4 /* AppDelegate.h */,
+				D71B37DE1D86BEAC00E353D4 /* AppDelegate.m */,
+				D71B37E31D86BEAC00E353D4 /* Main.storyboard */,
+				D71B37F11D86C1A600E353D4 /* LoginViewController.h */,
+				D71B37F21D86C1A600E353D4 /* LoginViewController.m */,
+				D71B37F41D86C9CF00E353D4 /* TVDBApi.h */,
+				D71B37F51D86C9CF00E353D4 /* TVDBApi.m */,
+				D71B37E61D86BEAC00E353D4 /* Assets.xcassets */,
+				D71B37E81D86BEAC00E353D4 /* LaunchScreen.storyboard */,
+				D71B37EB1D86BEAC00E353D4 /* Info.plist */,
+				D71B37DA1D86BEAC00E353D4 /* Supporting Files */,
+			);
+			path = "TheTVDB-ESGI";
+			sourceTree = "<group>";
+		};
+		D71B37DA1D86BEAC00E353D4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D71B37DB1D86BEAC00E353D4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D71B37D61D86BEAC00E353D4 /* TheTVDB-ESGI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D71B37EE1D86BEAC00E353D4 /* Build configuration list for PBXNativeTarget "TheTVDB-ESGI" */;
+			buildPhases = (
+				D71B37D31D86BEAC00E353D4 /* Sources */,
+				D71B37D41D86BEAC00E353D4 /* Frameworks */,
+				D71B37D51D86BEAC00E353D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TheTVDB-ESGI";
+			productName = "TheTVDB-ESGI";
+			productReference = D71B37D71D86BEAC00E353D4 /* TheTVDB-ESGI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D71B37CF1D86BEAC00E353D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Jason Pierna";
+				TargetAttributes = {
+					D71B37D61D86BEAC00E353D4 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 5RUJTG3BGA;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D71B37D21D86BEAC00E353D4 /* Build configuration list for PBXProject "TheTVDB-ESGI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D71B37CE1D86BEAC00E353D4;
+			productRefGroup = D71B37D81D86BEAC00E353D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D71B37D61D86BEAC00E353D4 /* TheTVDB-ESGI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D71B37D51D86BEAC00E353D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D71B37EA1D86BEAC00E353D4 /* LaunchScreen.storyboard in Resources */,
+				D71B37E71D86BEAC00E353D4 /* Assets.xcassets in Resources */,
+				D71B37E51D86BEAC00E353D4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D71B37D31D86BEAC00E353D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D71B37DF1D86BEAC00E353D4 /* AppDelegate.m in Sources */,
+				D71B37DC1D86BEAC00E353D4 /* main.m in Sources */,
+				D71B37F61D86C9CF00E353D4 /* TVDBApi.m in Sources */,
+				D71B37F31D86C1A600E353D4 /* LoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D71B37E31D86BEAC00E353D4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D71B37E41D86BEAC00E353D4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D71B37E81D86BEAC00E353D4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D71B37E91D86BEAC00E353D4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D71B37EC1D86BEAC00E353D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D71B37ED1D86BEAC00E353D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D71B37EF1D86BEAC00E353D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5RUJTG3BGA;
+				INFOPLIST_FILE = "TheTVDB-ESGI/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.jpierna.TheTVDB-ESGI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D71B37F01D86BEAC00E353D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5RUJTG3BGA;
+				INFOPLIST_FILE = "TheTVDB-ESGI/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.jpierna.TheTVDB-ESGI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D71B37D21D86BEAC00E353D4 /* Build configuration list for PBXProject "TheTVDB-ESGI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D71B37EC1D86BEAC00E353D4 /* Debug */,
+				D71B37ED1D86BEAC00E353D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D71B37EE1D86BEAC00E353D4 /* Build configuration list for PBXNativeTarget "TheTVDB-ESGI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D71B37EF1D86BEAC00E353D4 /* Debug */,
+				D71B37F01D86BEAC00E353D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D71B37CF1D86BEAC00E353D4 /* Project object */;
+}
