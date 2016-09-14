@@ -7,6 +7,7 @@
 //
 
 #import "TVShowListViewControllerTableViewController.h"
+#import "TVDBApi.h"
 
 @interface TVShowListViewControllerTableViewController () {
     NSArray* tvShows;
@@ -19,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     tvShows = @[@"Friends",@"How I Met Your Mother",@"South Park"];
+    
+    NSLog(@"%@", [TVDBApi test]);
 }
 
 - (void)didReceiveMemoryWarning {

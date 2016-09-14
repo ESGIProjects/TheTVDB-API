@@ -75,6 +75,8 @@
         if (token) {
             NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
             [defaults setObject:token forKey:@"token"];
+            
+            [self performSegueWithIdentifier:@"homeSegue" sender:nil];
         }
     }
 }
