@@ -14,6 +14,7 @@
 		D71B37EA1D86BEAC00E353D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71B37E81D86BEAC00E353D4 /* LaunchScreen.storyboard */; };
 		D71B37F31D86C1A600E353D4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B37F21D86C1A600E353D4 /* LoginViewController.m */; };
 		D71B37F61D86C9CF00E353D4 /* TVDBApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B37F51D86C9CF00E353D4 /* TVDBApi.m */; };
+		D71D14581D874EEC00324913 /* TVShowListViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D14571D874EEC00324913 /* TVShowListViewControllerTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		D71B37F21D86C1A600E353D4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D71B37F41D86C9CF00E353D4 /* TVDBApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVDBApi.h; sourceTree = "<group>"; };
 		D71B37F51D86C9CF00E353D4 /* TVDBApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVDBApi.m; sourceTree = "<group>"; };
+		D71D14561D874EEC00324913 /* TVShowListViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVShowListViewControllerTableViewController.h; sourceTree = "<group>"; };
+		D71D14571D874EEC00324913 /* TVShowListViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVShowListViewControllerTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 			children = (
 				D71B37F11D86C1A600E353D4 /* LoginViewController.h */,
 				D71B37F21D86C1A600E353D4 /* LoginViewController.m */,
+				D71D14561D874EEC00324913 /* TVShowListViewControllerTableViewController.h */,
+				D71D14571D874EEC00324913 /* TVShowListViewControllerTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				D71B37DF1D86BEAC00E353D4 /* AppDelegate.m in Sources */,
 				D71B37DC1D86BEAC00E353D4 /* main.m in Sources */,
 				D71B37F61D86C9CF00E353D4 /* TVDBApi.m in Sources */,
+				D71D14581D874EEC00324913 /* TVShowListViewControllerTableViewController.m in Sources */,
 				D71B37F31D86C1A600E353D4 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

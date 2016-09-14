@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface TVDBApi : NSObject
++(NSURLSessionDataTask*)dataTaskWithString:(NSString*)string andParameters:(NSDictionary*)parameters completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler;
 +(NSString*)authenticateWithUsername:(NSString*)username andUserKey:(NSString*)userkey;
++(NSArray*)getLastUpdatedSeries;
 @end
