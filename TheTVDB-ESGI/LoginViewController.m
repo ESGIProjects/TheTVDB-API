@@ -23,7 +23,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [_passwordTextField setText:@"F3B58F92B55594B4"];
-    
+    _usernameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Identifiant"
+                                                                               attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}
+                                                ];
+    _passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Identifiant"
+                                                                               attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}
+                                                ];
     [TVDBApi getLastUpdatedSeries];
 }
 
