@@ -8,9 +8,11 @@
 
 #import "TVShowListViewControllerTableViewController.h"
 #import "TVDBApi.h"
+#import "NameCell.h"
 
 @interface TVShowListViewControllerTableViewController () {
     NSArray* tvShows;
+    NSArray* tvGenre;
 }
 
 @end
@@ -19,9 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    tvShows = @[@"Friends",@"How I Met Your Mother",@"South Park"];
+    tvShows = @[@"Friends",@"How I Met Your Mother",@"South Park",@"Suits"];
+    tvGenre = @[@"Comedy",@"Comedy",@"Animation",@"Drama"];
     
-    NSLog(@"%@", [TVDBApi test]);
+    [self.tableView registerNib:[UINib nibWithNibName:@"NameCell" bundle:nil] forCellReuseIdentifier:@"NameCell"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,9 +42,16 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"tvShow" forIndexPath:indexPath];
-    cell.textLabel.text = tvShows[indexPath.row];
+    NameCell* cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell" forIndexPath:indexPath];
+    NSLog(@"%@", cell);
+    //cell.textLabel.text = tvShows[indexPath.row];
+    cell.name.text = tvShows[indexPath.row];
+    cell.genre.text = tvGenre[indexPath.row];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 128;
 }
 
 @end

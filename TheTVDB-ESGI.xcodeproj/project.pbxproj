@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEC5FDB51D89FB880008E082 /* NameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC5FDB41D89FB880008E082 /* NameCell.xib */; };
+		AEC5FDB81D89FFC40008E082 /* NameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC5FDB71D89FFC40008E082 /* NameCell.m */; };
 		D71B37DC1D86BEAC00E353D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B37DB1D86BEAC00E353D4 /* main.m */; };
 		D71B37DF1D86BEAC00E353D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B37DE1D86BEAC00E353D4 /* AppDelegate.m */; };
 		D71B37E51D86BEAC00E353D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71B37E31D86BEAC00E353D4 /* Main.storyboard */; };
@@ -18,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AEC5FDB41D89FB880008E082 /* NameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameCell.xib; sourceTree = "<group>"; };
+		AEC5FDB61D89FFC40008E082 /* NameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameCell.h; sourceTree = "<group>"; };
+		AEC5FDB71D89FFC40008E082 /* NameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameCell.m; sourceTree = "<group>"; };
 		D71B37D71D86BEAC00E353D4 /* TheTVDB-ESGI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TheTVDB-ESGI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71B37DB1D86BEAC00E353D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D71B37DD1D86BEAC00E353D4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -101,6 +106,9 @@
 				D71B37F21D86C1A600E353D4 /* LoginViewController.m */,
 				D71D14561D874EEC00324913 /* TVShowListViewControllerTableViewController.h */,
 				D71D14571D874EEC00324913 /* TVShowListViewControllerTableViewController.m */,
+				AEC5FDB41D89FB880008E082 /* NameCell.xib */,
+				AEC5FDB61D89FFC40008E082 /* NameCell.h */,
+				AEC5FDB71D89FFC40008E082 /* NameCell.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -166,6 +174,7 @@
 			files = (
 				D71B37EA1D86BEAC00E353D4 /* LaunchScreen.storyboard in Resources */,
 				D71B37E71D86BEAC00E353D4 /* Assets.xcassets in Resources */,
+				AEC5FDB51D89FB880008E082 /* NameCell.xib in Resources */,
 				D71B37E51D86BEAC00E353D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,6 +188,7 @@
 			files = (
 				D71B37DF1D86BEAC00E353D4 /* AppDelegate.m in Sources */,
 				D71B37DC1D86BEAC00E353D4 /* main.m in Sources */,
+				AEC5FDB81D89FFC40008E082 /* NameCell.m in Sources */,
 				D71B37F61D86C9CF00E353D4 /* TVDBApi.m in Sources */,
 				D71D14581D874EEC00324913 /* TVShowListViewControllerTableViewController.m in Sources */,
 				D71B37F31D86C1A600E353D4 /* LoginViewController.m in Sources */,
