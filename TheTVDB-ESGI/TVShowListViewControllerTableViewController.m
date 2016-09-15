@@ -10,48 +10,69 @@
 #import "TVDBApi.h"
 #import "NameCell.h"
 
-@interface TVShowListViewControllerTableViewController () {
-    NSArray* tvShows;
-    NSArray* tvGenre;
-}
+@interface TVShowListViewControllerTableViewController ()
 
 @end
 
 @implementation TVShowListViewControllerTableViewController
+@synthesize tvShows = _tvShows;
+@synthesize tvGenre = _tvGenre;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    tvShows = @[@"Friends",@"How I Met Your Mother",@"South Park",@"Suits"];
-    tvGenre = @[@"Comedy",@"Comedy",@"Animation",@"Drama"];
+    self.tvShows = [[NSMutableArray alloc] initWithArray:@[@"Friends",@"How I Met Your Mother",@"South Park",@"Suits"]];
+    self.tvGenre = [[NSMutableArray alloc] initWithArray:@[@"Comedy",@"Comedy",@"Animation",@"Drama"]];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"NameCell" bundle:nil] forCellReuseIdentifier:@"NameCell"];
     
+//    [self updateTableViewData];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [tvShows count];
+    return [self.tvShows count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NameCell* cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell" forIndexPath:indexPath];
-    NSLog(@"%@", cell);
-    //cell.textLabel.text = tvShows[indexPath.row];
-    cell.name.text = tvShows[indexPath.row];
-    cell.genre.text = tvGenre[indexPath.row];
+    cell.name.text = self.tvShows[indexPath.row];
+    cell.genre.text = self.tvGenre[indexPath.row];
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 128;
+}
+
+#pragma mark - Helper
+
+- (void)updateTableViewData {
+    [TVDBApi getLastUpdatedSeriesWithCompletion: ^(NSData* data, NSURLResponse* response, NSError* error) {
+        if (data) {
+            NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+            if (json) {
+                self.tvShows = json[@"data"];
+                NSLog(@"%@", self.tvShows);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.tableView reloadData];
+                });
+            }
+            else {
+                NSLog(@"%@", error.localizedDescription);
+            }
+        }
+        else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 }
 
 @end

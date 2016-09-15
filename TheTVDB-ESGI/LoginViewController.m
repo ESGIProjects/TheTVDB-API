@@ -18,35 +18,36 @@
 @end
 
 @implementation LoginViewController
+@synthesize usernameTextField = _usernameTextField;
+@synthesize passwordTextField = _passwordTextField;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [_passwordTextField setText:@"F3B58F92B55594B4"];
-    _usernameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Identifiant"
-                                                                               attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}
-                                                ];
-    _passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Identifiant"
-                                                                               attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}
-                                                ];
-    [TVDBApi getLastUpdatedSeries];
+    
+    // Facilité pour tester : champ pré-rempli
+    [self.passwordTextField setText:@"F3B58F92B55594B4"];
+    
+    // Couleur des placeholders
+    self.usernameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Identifiant"
+                                                                                   attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}
+                                                    ];
+    self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Identifiant"
+                                                                                   attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}
+                                                    ];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - Actions
 
 - (IBAction)login {
     // On vérifie si les champs sont pleins
     
     BOOL emptyTextFields = NO;
     
-    if ([[_usernameTextField text] isEqualToString:@""]) {
+    if ([[self.usernameTextField text] isEqualToString:@""]) {
         emptyTextFields = YES;
     }
     
-    if ([[_passwordTextField text] isEqualToString:@""]) {
+    if ([[self.passwordTextField text] isEqualToString:@""]) {
         emptyTextFields = YES;
     }
     
@@ -67,31 +68,31 @@
     }
     else {
         // On lance la requête de connexion
-        NSString* token = [TVDBApi
-         authenticateWithUsername:[_usernameTextField text]
-         andUserKey:[_passwordTextField text]
-         ];
         
-        if (token) {
-            NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-            [defaults setObject:token forKey:@"token"];
-            
-            [self performSegueWithIdentifier:@"homeSegue" sender:nil];
-        }
-    }
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    
-    if (textField == _usernameTextField) {
-        [_passwordTextField becomeFirstResponder];
-    }
-    else {
-        [self login];
-    }
-    
-    return YES;
+        [TVDBApi
+         authenticateWithUsername:[self.usernameTextField text]
+         andUserKey:[self.passwordTextField text]
+         completionHandler:^(NSData* data, NSURLResponse* response, NSError* error) {
+             if ([(NSHTTPURLResponse*)response statusCode] == 200) {
+                 NSDictionary* jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+                 NSString* token = jsonData[@"token"];
+                 NSLog(@"%@", token);
+                 
+                 if (token) {
+                     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+                     [defaults setObject:token forKey:@"token"];
+                     
+                     dispatch_async(dispatch_get_main_queue(), ^{
+                         [self performSegueWithIdentifier:@"homeSegue" sender:nil];
+                     });
+                     
+                     
+                 }
+             }
+             else {
+                 NSLog(@"%@", error.localizedDescription);
+             }
+         }];    }
 }
 
 - (IBAction)register {
@@ -106,5 +107,22 @@
         [[UIApplication sharedApplication] openURL:registerURL];
     }
 }
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    
+    if (textField == self.usernameTextField) {
+        [self.passwordTextField becomeFirstResponder];
+    }
+    else {
+        [self login];
+    }
+    
+    return YES;
+}
+
+
 
 @end
