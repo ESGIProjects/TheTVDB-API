@@ -20,13 +20,13 @@
     // Override point for customization after application launch.
     NSString* token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     
-    /*if (token) {
+    if (token) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UITabBarController* tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
         
         [self.window setRootViewController:tabBarController];
         [self.window makeKeyAndVisible];
-    }*/
+    }
    	
     [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x067AB5)];
     

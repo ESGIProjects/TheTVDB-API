@@ -57,7 +57,7 @@ static NSString* API_KEY = @"C81A0DBC502DD6C8";
 
 + (void)getLastUpdatedSeriesWithCompletion:(void (^)(NSData* data, NSURLResponse* response, NSError* error))completion {
     // Infos nécessaires
-    NSTimeInterval lastWeek = [[NSDate dateWithTimeIntervalSinceNow:(-60*60*24)] timeIntervalSince1970];
+    NSTimeInterval lastWeek = [[NSDate dateWithTimeIntervalSinceNow:(-60*60)] timeIntervalSince1970];
     NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.thetvdb.com/updated/query?fromTime=%.0f", lastWeek]];
     NSString* token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     
@@ -69,6 +69,27 @@ static NSString* API_KEY = @"C81A0DBC502DD6C8";
         [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
         [urlRequest setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
         
+        NSURLSessionDataTask* task = [session dataTaskWithRequest:urlRequest completionHandler:completion];
+        [task resume];
+    }
+    else {
+        NSLog(@"Token is missing");
+    }
+}
+
++ (void)getTVShowWithId:(int)identifier completionHandler:(void (^)(NSData *, NSURLResponse *, NSError *))completion {
+    NSLog(@"%d", identifier);
+    
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.thetvdb.com/series/%d", identifier]];
+    NSString* token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    
+    // Vérification du token avant de continuer
+    if (token) {
+        NSURLSession* session = [NSURLSession sharedSession];
+        NSMutableURLRequest* urlRequest = [NSMutableURLRequest requestWithURL:url];
+        [urlRequest setHTTPMethod:@"GET"];
+        [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        [urlRequest setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
         
         NSURLSessionDataTask* task = [session dataTaskWithRequest:urlRequest completionHandler:completion];
         [task resume];
