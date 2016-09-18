@@ -7,7 +7,23 @@
 //
 
 #import "TVShow.h"
+#import "TVDBApi.h"
 
 @implementation TVShow
+@synthesize showId = _showId;
+@synthesize name = _name;
+@synthesize overview = _overview;
+@synthesize genre = _genre;
+
+- (id)initWithId:(NSNumber*)identifier {
+    if ((self = [super init])) {
+        self.showId = identifier;
+    }
+    return self;
+}
+
+- (void)updateWithCompletion:(void (^)(NSData *, NSURLResponse *, NSError *))completion {
+    [TVDBApi getTVShowWithId:self.showId completionHandler:completion];
+}
 
 @end
