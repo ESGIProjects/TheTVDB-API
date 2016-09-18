@@ -8,10 +8,10 @@
 
 #import "TVShowListViewControllerTableViewController.h"
 #import "TVDBApi.h"
+#import "TVShow.h"
 #import "NameCell.h"
 
 @interface TVShowListViewControllerTableViewController () {
-    dispatch_queue_t serieQueue;
     dispatch_queue_t imageQueue;
 }
 
@@ -49,24 +49,40 @@
     if (!cell)
         cell = [NameCell new];
     
-    [TVDBApi getTVShowWithId:(int)self.tvShows[indexPath.row] completionHandler:^(NSData* data, NSURLResponse* response, NSError* error) {
-        NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        if (json) {
-            NSLog(@"%@", json);
-            NSDictionary* dataJson = json[@"data"];
-            if (dataJson) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    cell.name.text = dataJson[@"seriesName"];
-                });
-            }
-        }
-        else {
-            NSLog(@"Error with TV Show ID %d", (int)self.tvShows[indexPath.row]);
-        }
-    }];
+    TVShow* tvShow = self.tvShows[indexPath.row];
     
-    //cell.name.text = self.tvShows[indexPath.row];
-    //cell.genre.text = self.tvGenre[indexPath.row];
+    if (tvShow.name) {
+        cell.name.text = tvShow.name;
+    }
+    else {
+        [tvShow updateWithCompletion:^(NSData* data, NSURLResponse* response, NSError* error) {
+            NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+            if (json) {
+                NSLog(@"%@", json);
+                NSDictionary* dataJson = json[@"data"];
+                if (dataJson) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if ([[dataJson[@"seriesName"] class] isSubclassOfClass:[NSString class]]) {
+                            tvShow.name = dataJson[@"seriesName"];
+                            cell.name.text = tvShow.name;
+                        }
+                        
+                        if ([[dataJson[@"overview"] class] isSubclassOfClass:[NSString class]]) {
+                            tvShow.overview = dataJson[@"overview"];
+                        }
+                        
+                        if ([[dataJson[@"genre"] class] isSubclassOfClass:[NSArray class]]) {
+                            tvShow.genre = dataJson[@"genre"];
+                            cell.genre.text = [tvShow.genre componentsJoinedByString:@", "];
+                        }
+                    });
+                }
+            }
+            else {
+                NSLog(@"Error with TV Show ID %d", (int)self.tvShows[indexPath.row]);
+            }
+        }];
+    }
     
     return cell;
 }
@@ -89,7 +105,8 @@
                 NSLog(@"%@", json[@"data"]);
                 
                 for (NSDictionary* dictionnary in json[@"data"]) {
-                    [idArray addObject:dictionnary[@"id"]];
+                    TVShow* tvShow = [[TVShow alloc] initWithId:dictionnary[@"id"]];
+                    [idArray addObject:tvShow];
                 }
                 
                 self.tvShows = idArray;

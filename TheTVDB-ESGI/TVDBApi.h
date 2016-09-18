@@ -13,5 +13,5 @@
 
 +(void)authenticateWithUsername:(NSString*)username andUserKey:(NSString*)userkey completionHandler:(void (^)(NSData* data, NSURLResponse* response, NSError* error))completion;
 +(void)getLastUpdatedSeriesWithCompletion:(void (^)(NSData* data, NSURLResponse* response, NSError* error))completion;
-+(void)getTVShowWithId:(int)identifier completionHandler:(void (^)(NSData* data, NSURLResponse* response, NSError* error))completion;
++(void)getTVShowWithId:(NSNumber*)identifier completionHandler:(void (^)(NSData* data, NSURLResponse* response, NSError* error))completion;
 @end

@@ -9,17 +9,18 @@
 #import <Foundation/Foundation.h>
 
 @interface TVShow : NSObject {
-    NSInteger _showId;
+    NSNumber* _showId;
     NSString* _name;
     NSString* _overview;
     NSArray* _genre;
 }
 
-@property(assign, nonatomic) NSInteger showId;
+@property(strong, nonatomic) NSNumber* showId;
 @property(strong, nonatomic) NSString* name;
 @property(strong, nonatomic) NSString* overview;
 @property(strong, nonatomic) NSArray* genre;
 
--(id)initWithId:(NSInteger)id andName:(NSString*)name;
+-(id)initWithId:(NSNumber*)identifier;
+-(void)updateWithCompletion:(void (^)(NSData* data, NSURLResponse* response, NSError* error))completion;
 
 @end

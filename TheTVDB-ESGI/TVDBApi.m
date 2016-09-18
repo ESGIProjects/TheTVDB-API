@@ -77,10 +77,10 @@ static NSString* API_KEY = @"C81A0DBC502DD6C8";
     }
 }
 
-+ (void)getTVShowWithId:(int)identifier completionHandler:(void (^)(NSData *, NSURLResponse *, NSError *))completion {
-    NSLog(@"%d", identifier);
++ (void)getTVShowWithId:(NSNumber*)identifier completionHandler:(void (^)(NSData *, NSURLResponse *, NSError *))completion {
+    NSLog(@"%ld", [identifier longValue]);
     
-    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.thetvdb.com/series/%d", identifier]];
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.thetvdb.com/series/%ld", [identifier longValue]]];
     NSString* token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     
     // Vérification du token avant de continuer
