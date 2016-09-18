@@ -14,10 +14,12 @@
 @synthesize name = _name;
 @synthesize overview = _overview;
 @synthesize genre = _genre;
+@synthesize loaded = _loaded;
 
 - (id)initWithId:(NSNumber*)identifier {
     if ((self = [super init])) {
         self.showId = identifier;
+        self.loaded = NO;
     }
     return self;
 }

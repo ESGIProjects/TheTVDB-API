@@ -13,12 +13,14 @@
     NSString* _name;
     NSString* _overview;
     NSArray* _genre;
+    BOOL _loaded;
 }
 
 @property(strong, nonatomic) NSNumber* showId;
 @property(strong, nonatomic) NSString* name;
 @property(strong, nonatomic) NSString* overview;
 @property(strong, nonatomic) NSArray* genre;
+@property(assign, nonatomic) BOOL loaded;
 
 -(id)initWithId:(NSNumber*)identifier;
 -(void)updateWithCompletion:(void (^)(NSData* data, NSURLResponse* response, NSError* error))completion;

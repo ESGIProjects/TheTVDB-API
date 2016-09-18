@@ -89,6 +89,7 @@ static NSString* API_KEY = @"C81A0DBC502DD6C8";
         NSMutableURLRequest* urlRequest = [NSMutableURLRequest requestWithURL:url];
         [urlRequest setHTTPMethod:@"GET"];
         [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        [urlRequest setValue:@"en" forHTTPHeaderField:@"Accept-Language"];
         [urlRequest setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
         
         NSURLSessionDataTask* task = [session dataTaskWithRequest:urlRequest completionHandler:completion];
@@ -97,6 +98,10 @@ static NSString* API_KEY = @"C81A0DBC502DD6C8";
     else {
         NSLog(@"Token is missing");
     }
+}
+
++ (void)getEpisodesWithTVShowId:(NSNumber *)identifier completionHandler:(void (^)(NSData *, NSURLResponse *, NSError *))completion {
+    
 }
 
 @end
