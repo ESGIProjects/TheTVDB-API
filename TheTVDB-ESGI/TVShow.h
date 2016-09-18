@@ -12,11 +12,13 @@
     NSInteger _showId;
     NSString* _name;
     NSString* _overview;
+    NSArray* _genre;
 }
 
 @property(assign, nonatomic) NSInteger showId;
 @property(strong, nonatomic) NSString* name;
 @property(strong, nonatomic) NSString* overview;
+@property(strong, nonatomic) NSArray* genre;
 
 -(id)initWithId:(NSInteger)id andName:(NSString*)name;
 

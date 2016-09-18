@@ -178,7 +178,7 @@
 				TargetAttributes = {
 					D71B37D61D86BEAC00E353D4 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 5RUJTG3BGA;
+						DevelopmentTeam = PG324D5455;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -349,11 +349,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5RUJTG3BGA;
+				DEVELOPMENT_TEAM = PG324D5455;
 				INFOPLIST_FILE = "TheTVDB-ESGI/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.jpierna.TheTVDB-ESGI";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.le.TheTVDB-ESGI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -362,11 +362,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5RUJTG3BGA;
+				DEVELOPMENT_TEAM = PG324D5455;
 				INFOPLIST_FILE = "TheTVDB-ESGI/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.jpierna.TheTVDB-ESGI";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.le.TheTVDB-ESGI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

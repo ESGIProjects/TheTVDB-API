@@ -15,6 +15,7 @@
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *infoButton;
 @end
 
 @implementation LoginViewController
@@ -27,16 +28,34 @@
     // Facilité pour tester : champ pré-rempli
     [self.passwordTextField setText:@"F3B58F92B55594B4"];
     
+    [self.passwordTextField addTarget:self action:@selector(checkUserkeyLength) forControlEvents:UIControlEventEditingChanged];
+    
     // Couleur des placeholders
-    self.usernameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Identifiant"
+    self.usernameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"ID"
                                                                                    attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}
                                                     ];
-    self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Identifiant"
+    self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Userkey"
                                                                                    attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}
                                                     ];
 }
 
+
 #pragma mark - Actions
+- (IBAction)infoUserkey {
+    // Il manque un champ, on prévient
+    UIAlertController* alertController = [UIAlertController
+                                          alertControllerWithTitle:@"Info"
+                                          message:@"Userkey can be found in your TheTVDB profile"
+                                          preferredStyle:UIAlertControllerStyleAlert
+                                          ];
+    
+    [alertController addAction:[UIAlertAction
+                                actionWithTitle:@"OK"
+                                style:UIAlertActionStyleDefault
+                                handler:nil]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
 
 - (IBAction)login {
     // On vérifie si les champs sont pleins
@@ -49,13 +68,14 @@
     
     if ([[self.passwordTextField text] isEqualToString:@""]) {
         emptyTextFields = YES;
+        
     }
     
     if (emptyTextFields) {
         // Il manque un champ, on prévient
         UIAlertController* alertController = [UIAlertController
-                                              alertControllerWithTitle:@"Champs manquants"
-                                              message:@"Tous les champs doivent être remplis !"
+                                              alertControllerWithTitle:@"Missing fields"
+                                              message:@"All fields are required !"
                                               preferredStyle:UIAlertControllerStyleAlert
                                               ];
         
@@ -123,6 +143,13 @@
     return YES;
 }
 
-
+-(void) checkUserkeyLength {
+    if ([[self.passwordTextField text] isEqualToString:@""]) {
+        [self.infoButton setHidden:FALSE];
+    }
+    else {
+        [self.infoButton setHidden:TRUE];
+    }
+}
 
 @end
