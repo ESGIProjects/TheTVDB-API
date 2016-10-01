@@ -31,17 +31,14 @@
     }
     
     self.delegate.tvShow.favorite = !favorite;
-    
-    NSLog(@"Favorite");
 }
 
 - (IBAction)rateButton {
     [self.delegate showContainerWithIdentifier:@"showRating"];
-    NSLog(@"Rate");
 }
 
 - (IBAction)imagesButton {
-    NSLog(@"Images");
+    
 }
 
 @end

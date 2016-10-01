@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TVShowDetailViewController.h"
 
-@interface ShowRatingViewController : UIViewController{
+@interface ShowRatingViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource> {
     __weak TVShowDetailViewController* _delegate;
 }
 @property(weak, nonatomic) TVShowDetailViewController* delegate;

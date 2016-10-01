@@ -153,7 +153,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0kW-zA-cyV" id="CQh-o5-LDJ">
-                                    <frame key="frameInset" width="375" height="44"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -174,7 +174,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i8q-VD-5AJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Last updated" image="Clock" id="DX7-ty-jcT"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OGE-cr-2xo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OGE-cr-2xo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -219,7 +219,7 @@
                                 <rect key="frame" x="0.0" y="358" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="giR-KZ-kGW" id="0W7-I3-QSp">
-                                    <frame key="frameInset" width="375" height="44"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -249,7 +249,6 @@
         <!--Show Detail View Controller-->
         <scene sceneID="EXd-je-E8C">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="siD-iV-nFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="showDetail" id="JPs-RQ-04k" customClass="ShowDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zgj-Y7-fH1"/>
@@ -308,13 +307,13 @@
                         <outlet property="imageView" destination="ctq-Dm-fQM" id="uA3-BT-161"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="siD-iV-nFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4406" y="488"/>
         </scene>
         <!--Show Rating View Controller-->
         <scene sceneID="IJ6-1k-Dqk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Kk-XR-KfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="showRating" id="aNx-rL-8Ye" customClass="ShowRatingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SFa-oc-ZvM"/>
@@ -324,7 +323,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYU-VX-Etk"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYU-VX-Etk">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="ipO-c9-QAo"/>
+                                </constraints>
+                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JP-jN-Jdm">
                                 <color key="backgroundColor" red="0.230522424" green="0.54173976180000005" blue="0.7372840047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Cancel">
@@ -362,6 +365,7 @@
                         <outlet property="ratePicker" destination="wYU-VX-Etk" id="6DX-m7-cJr"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Kk-XR-KfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5111" y="487"/>
         </scene>
@@ -393,7 +397,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wa8-ji-gju" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="8PQ-74-sbr"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="z2Q-ca-IKi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z2Q-ca-IKi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.230522424" green="0.54173976180000005" blue="0.7372840047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -423,7 +427,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t1d-7P-RaM" id="914-fc-1Qn">
-                                    <frame key="frameInset" width="375" height="100"/>
+                                    <frame key="frameInset" width="375" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
