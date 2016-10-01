@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface TVShow : NSObject {
     NSNumber* _showId;
     NSString* _name;
     NSString* _overview;
     NSArray* _genre;
+    UIImage* _thumbnail;
+    
     BOOL _favorite;
     BOOL _loaded;
 }
@@ -21,6 +24,7 @@
 @property(strong, nonatomic) NSString* name;
 @property(strong, nonatomic) NSString* overview;
 @property(strong, nonatomic) NSArray* genre;
+@property(strong, nonatomic) UIImage* thumbnail;
 @property(assign, nonatomic) BOOL favorite;
 @property(assign, nonatomic) BOOL loaded;
 

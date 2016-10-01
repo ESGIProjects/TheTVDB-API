@@ -14,6 +14,7 @@
 @synthesize name = _name;
 @synthesize overview = _overview;
 @synthesize genre = _genre;
+@synthesize thumbnail = _thumbnail;
 @synthesize favorite = _favorite;
 @synthesize loaded = _loaded;
 

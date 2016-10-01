@@ -56,6 +56,7 @@
     
     cell.name.text = tvShow.name;
     cell.genre.text = [tvShow.genre componentsJoinedByString:@", "];
+    cell.thumbnail.image = tvShow.thumbnail;
     
     return cell;
 }
@@ -80,7 +81,7 @@
             if (json) {
                 NSMutableArray* idArray = [NSMutableArray new];
                 
-                NSLog(@"%@", json[@"data"]);
+                //NSLog(@"%@", json[@"data"]);
                 
                 for (NSDictionary* dictionnary in json[@"data"]) {
                     TVShow* tvShow = [[TVShow alloc] initWithId:dictionnary[@"id"]];
@@ -89,7 +90,7 @@
                 
                 self.tvShows = idArray;
                 
-                NSLog(@"%@", self.tvShows);
+                //NSLog(@"%@", self.tvShows);
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.tableView reloadData];
@@ -126,16 +127,16 @@
                 if ([[[series objectForKey:@"genre"] class] isSubclassOfClass:[NSArray class]])
                     tvShow.genre = [series objectForKey:@"genre"];
                 
-                if ([[[series objectForKey:@"banner"] class] isSubclassOfClass:[NSArray class]]) {
+                if ([[[series objectForKey:@"banner"] class] isSubclassOfClass:[NSString class]]) {
                     NSString* urlImage = [NSString stringWithFormat:@"https://thetvdb.com/banners/%@", series[@"banner"]];
                     NSData* data = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlImage]];
                     
-                    NSLog(@"%@", data);
                     if (data != nil) {
                         dispatch_async(dispatch_get_main_queue(), ^{
+                            //NSLog(@"ERROR");
                             UIImage* image = [UIImage imageWithData:data];
-                            NameCell* cell = (NameCell*)[self tableView:self.tableView cellForRowAtIndexPath:indexPath];
-                            cell.thumbnail.image =  image;
+                            tvShow.thumbnail = image;
+                            
                         });
                     }
                 }
