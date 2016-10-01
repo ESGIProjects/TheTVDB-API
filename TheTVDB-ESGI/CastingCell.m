@@ -16,9 +16,11 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self.thumbnail.layer setCornerRadius:64.0];
+    
+    // Round thumbnail
+    [self.thumbnail.layer setCornerRadius:55.5];
     [self.thumbnail.layer setMasksToBounds:YES];
-    // Initialization code
+    [self.thumbnail setClipsToBounds:YES];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

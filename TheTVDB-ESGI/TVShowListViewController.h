@@ -6,13 +6,11 @@
 //  Copyright © 2016 Jason Pierna. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface TVShowListViewControllerTableViewController : UITableViewController {
+@interface TVShowListViewController : UITableViewController {
     NSMutableArray* _tvShows;
-    NSMutableArray* _tvGenre;
 }
 @property(strong, nonatomic) NSMutableArray* tvShows;
-@property(strong, nonatomic) NSMutableArray* tvGenre;
-
 @end

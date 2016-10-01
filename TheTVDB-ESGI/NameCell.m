@@ -7,6 +7,7 @@
 //
 
 #import "NameCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation NameCell
 
@@ -16,7 +17,20 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    // Set dark overlay on thumbnail
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = self.thumbnail.bounds;
+    
+    UIColor* topColor = [UIColor colorWithWhite:0 alpha:0.25];
+    UIColor* bottomColor = [UIColor colorWithWhite:0.667 alpha:0.25];
+    
+    gradient.colors = @[
+                        (id)[topColor CGColor],
+                        (id)[bottomColor CGColor],
+                        ];
+    [self.thumbnail.layer addSublayer:gradient];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

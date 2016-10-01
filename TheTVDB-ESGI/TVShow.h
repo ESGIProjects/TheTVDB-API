@@ -13,6 +13,7 @@
     NSString* _name;
     NSString* _overview;
     NSArray* _genre;
+    BOOL _favorite;
     BOOL _loaded;
 }
 
@@ -20,6 +21,7 @@
 @property(strong, nonatomic) NSString* name;
 @property(strong, nonatomic) NSString* overview;
 @property(strong, nonatomic) NSArray* genre;
+@property(assign, nonatomic) BOOL favorite;
 @property(assign, nonatomic) BOOL loaded;
 
 -(id)initWithId:(NSNumber*)identifier;

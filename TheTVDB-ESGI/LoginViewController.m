@@ -30,13 +30,13 @@
     
     [self.passwordTextField addTarget:self action:@selector(checkUserkeyLength) forControlEvents:UIControlEventEditingChanged];
     
-    // Couleur des placeholders
-    self.usernameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"ID"
-                                                                                   attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}
-                                                    ];
-    self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Userkey"
-                                                                                   attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}
-                                                    ];
+//    // Couleur des placeholders
+//    self.usernameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"ID"
+//                                                                                   attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}
+//                                                    ];
+//    self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Userkey"
+//                                                                                   attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}
+//                                                    ];
 }
 
 

@@ -14,6 +14,7 @@
 @synthesize name = _name;
 @synthesize overview = _overview;
 @synthesize genre = _genre;
+@synthesize favorite = _favorite;
 @synthesize loaded = _loaded;
 
 - (id)initWithId:(NSNumber*)identifier {

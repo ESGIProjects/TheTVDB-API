@@ -19,7 +19,10 @@
 		D71B37EA1D86BEAC00E353D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71B37E81D86BEAC00E353D4 /* LaunchScreen.storyboard */; };
 		D71B37F31D86C1A600E353D4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B37F21D86C1A600E353D4 /* LoginViewController.m */; };
 		D71B37F61D86C9CF00E353D4 /* TVDBApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D71B37F51D86C9CF00E353D4 /* TVDBApi.m */; };
-		D71D14581D874EEC00324913 /* TVShowListViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D14571D874EEC00324913 /* TVShowListViewControllerTableViewController.m */; };
+		D71D14581D874EEC00324913 /* TVShowListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D14571D874EEC00324913 /* TVShowListViewController.m */; };
+		D78BBDF11D9FED1C00296A08 /* ShowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78BBDF01D9FED1C00296A08 /* ShowDetailViewController.m */; };
+		D78BBDF41D9FED2B00296A08 /* ShowRatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78BBDF31D9FED2B00296A08 /* ShowRatingViewController.m */; };
+		D78BBDF71D9FF04700296A08 /* TVShowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78BBDF61D9FF04700296A08 /* TVShowDetailViewController.m */; };
 		D7E1D1021D8C39DF0058FBC9 /* TVShow.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E1D1011D8C39DF0058FBC9 /* TVShow.m */; };
 /* End PBXBuildFile section */
 
@@ -44,8 +47,14 @@
 		D71B37F21D86C1A600E353D4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D71B37F41D86C9CF00E353D4 /* TVDBApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVDBApi.h; sourceTree = "<group>"; };
 		D71B37F51D86C9CF00E353D4 /* TVDBApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVDBApi.m; sourceTree = "<group>"; };
-		D71D14561D874EEC00324913 /* TVShowListViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVShowListViewControllerTableViewController.h; sourceTree = "<group>"; };
-		D71D14571D874EEC00324913 /* TVShowListViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVShowListViewControllerTableViewController.m; sourceTree = "<group>"; };
+		D71D14561D874EEC00324913 /* TVShowListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVShowListViewController.h; sourceTree = "<group>"; };
+		D71D14571D874EEC00324913 /* TVShowListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVShowListViewController.m; sourceTree = "<group>"; };
+		D78BBDEF1D9FED1C00296A08 /* ShowDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDetailViewController.h; sourceTree = "<group>"; };
+		D78BBDF01D9FED1C00296A08 /* ShowDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowDetailViewController.m; sourceTree = "<group>"; };
+		D78BBDF21D9FED2B00296A08 /* ShowRatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowRatingViewController.h; sourceTree = "<group>"; };
+		D78BBDF31D9FED2B00296A08 /* ShowRatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowRatingViewController.m; sourceTree = "<group>"; };
+		D78BBDF51D9FF04700296A08 /* TVShowDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVShowDetailViewController.h; sourceTree = "<group>"; };
+		D78BBDF61D9FF04700296A08 /* TVShowDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVShowDetailViewController.m; sourceTree = "<group>"; };
 		D7E1D1001D8C39DF0058FBC9 /* TVShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVShow.h; sourceTree = "<group>"; };
 		D7E1D1011D8C39DF0058FBC9 /* TVShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVShow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,12 +73,12 @@
 		AEC5FDB91D8AF9F90008E082 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AEC5FDB41D89FB880008E082 /* NameCell.xib */,
 				AEC5FDB61D89FFC40008E082 /* NameCell.h */,
 				AEC5FDB71D89FFC40008E082 /* NameCell.m */,
-				AEC5FDBA1D8B43C70008E082 /* CastingCell.xib */,
+				AEC5FDB41D89FB880008E082 /* NameCell.xib */,
 				AEC5FDBC1D8B45D70008E082 /* CastingCell.h */,
 				AEC5FDBD1D8B45D70008E082 /* CastingCell.m */,
+				AEC5FDBA1D8B43C70008E082 /* CastingCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -128,14 +137,28 @@
 		D71D14551D872E7D00324913 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D78BBDFC1D9FF38100296A08 /* Embedded View Controllers */,
 				D71B37F11D86C1A600E353D4 /* LoginViewController.h */,
 				D71B37F21D86C1A600E353D4 /* LoginViewController.m */,
-				D71D14561D874EEC00324913 /* TVShowListViewControllerTableViewController.h */,
-				D71D14571D874EEC00324913 /* TVShowListViewControllerTableViewController.m */,
+				D71D14561D874EEC00324913 /* TVShowListViewController.h */,
+				D71D14571D874EEC00324913 /* TVShowListViewController.m */,
+				D78BBDF51D9FF04700296A08 /* TVShowDetailViewController.h */,
+				D78BBDF61D9FF04700296A08 /* TVShowDetailViewController.m */,
 				AEC5FDBF1D8B47610008E082 /* CastingTableViewController.h */,
 				AEC5FDC01D8B47610008E082 /* CastingTableViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D78BBDFC1D9FF38100296A08 /* Embedded View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D78BBDEF1D9FED1C00296A08 /* ShowDetailViewController.h */,
+				D78BBDF01D9FED1C00296A08 /* ShowDetailViewController.m */,
+				D78BBDF21D9FED2B00296A08 /* ShowRatingViewController.h */,
+				D78BBDF31D9FED2B00296A08 /* ShowRatingViewController.m */,
+			);
+			name = "Embedded View Controllers";
 			sourceTree = "<group>";
 		};
 		D7E1D0FF1D8C39AC0058FBC9 /* Models */ = {
@@ -221,15 +244,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D78BBDF11D9FED1C00296A08 /* ShowDetailViewController.m in Sources */,
 				D71B37DF1D86BEAC00E353D4 /* AppDelegate.m in Sources */,
 				D71B37DC1D86BEAC00E353D4 /* main.m in Sources */,
 				AEC5FDBE1D8B45D70008E082 /* CastingCell.m in Sources */,
+				D78BBDF71D9FF04700296A08 /* TVShowDetailViewController.m in Sources */,
 				AEC5FDB81D89FFC40008E082 /* NameCell.m in Sources */,
 				D71B37F61D86C9CF00E353D4 /* TVDBApi.m in Sources */,
-				D71D14581D874EEC00324913 /* TVShowListViewControllerTableViewController.m in Sources */,
+				D71D14581D874EEC00324913 /* TVShowListViewController.m in Sources */,
 				D7E1D1021D8C39DF0058FBC9 /* TVShow.m in Sources */,
 				D71B37F31D86C1A600E353D4 /* LoginViewController.m in Sources */,
 				AEC5FDC11D8B47610008E082 /* CastingTableViewController.m in Sources */,
+				D78BBDF41D9FED2B00296A08 /* ShowRatingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2333a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,11 +25,29 @@
                                     <constraint firstAttribute="width" constant="170" id="rg1-j3-anE"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The TVDB ESGI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aj9-YO-G3i">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7C-Ar-Fxb">
+                                <string key="text">Jason PIERNA - 4A MOC 1
+Kévin LE - 4A MOC 1</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.13725490196078433" green="0.46274509803921571" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="aj9-YO-G3i" firstAttribute="top" secondItem="SX5-nN-o78" secondAttribute="bottom" constant="50" id="2wr-6Z-rpz"/>
+                            <constraint firstItem="E7C-Ar-Fxb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="E8T-EH-pGj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aj9-YO-G3i" secondAttribute="trailing" id="Mky-ZZ-dG2"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="E7C-Ar-Fxb" secondAttribute="bottom" constant="15" id="USx-qy-Lqi"/>
+                            <constraint firstItem="aj9-YO-G3i" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="YXm-xq-Rbg"/>
                             <constraint firstItem="SX5-nN-o78" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jMe-jK-FDg"/>
-                            <constraint firstItem="SX5-nN-o78" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="nEw-FL-Igw"/>
+                            <constraint firstItem="SX5-nN-o78" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-50" id="nEw-FL-Igw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="E7C-Ar-Fxb" secondAttribute="trailing" id="taL-Wf-J0N"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,6 +57,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Homer" width="16" height="16"/>
+        <image name="Homer" width="170" height="170"/>
     </resources>
 </document>
