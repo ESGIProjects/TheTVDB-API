@@ -104,4 +104,24 @@ static NSString* API_KEY = @"C81A0DBC502DD6C8";
     
 }
 
++ (void)getImageShowWithId:(NSNumber*)identifier completionHandler:(void (^)(NSData *, NSURLResponse *, NSError *))completion {
+    
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.thetvdb.com/series/%ld/images", [identifier longValue]]];
+    NSString* token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    
+    if (token) {
+        NSURLSession* session = [NSURLSession sharedSession];
+        NSMutableURLRequest* urlRequest = [NSMutableURLRequest requestWithURL:url];
+        [urlRequest setHTTPMethod:@"GET"];
+        [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        [urlRequest setValue:@"en" forHTTPHeaderField:@"Accept-Language"];
+        [urlRequest setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
+        
+        NSURLSessionDataTask* task = [session dataTaskWithRequest:urlRequest completionHandler:completion];
+        [task resume];
+    }
+    else
+        NSLog(@"Token is missing");
+}
+
 @end

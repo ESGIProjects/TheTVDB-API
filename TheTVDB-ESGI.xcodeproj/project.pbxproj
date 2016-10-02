@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE7B58CB1DA10B4100918497 /* ImageShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7B58CA1DA10B4100918497 /* ImageShowViewController.m */; };
 		AEC5FDB51D89FB880008E082 /* NameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC5FDB41D89FB880008E082 /* NameCell.xib */; };
 		AEC5FDB81D89FFC40008E082 /* NameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC5FDB71D89FFC40008E082 /* NameCell.m */; };
 		AEC5FDBB1D8B43C70008E082 /* CastingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC5FDBA1D8B43C70008E082 /* CastingCell.xib */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE7B58C91DA10B4100918497 /* ImageShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageShowViewController.h; sourceTree = "<group>"; };
+		AE7B58CA1DA10B4100918497 /* ImageShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageShowViewController.m; sourceTree = "<group>"; };
 		AEC5FDB41D89FB880008E082 /* NameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameCell.xib; sourceTree = "<group>"; };
 		AEC5FDB61D89FFC40008E082 /* NameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameCell.h; sourceTree = "<group>"; };
 		AEC5FDB71D89FFC40008E082 /* NameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameCell.m; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				D78BBDF61D9FF04700296A08 /* TVShowDetailViewController.m */,
 				AEC5FDBF1D8B47610008E082 /* CastingTableViewController.h */,
 				AEC5FDC01D8B47610008E082 /* CastingTableViewController.m */,
+				AE7B58C91DA10B4100918497 /* ImageShowViewController.h */,
+				AE7B58CA1DA10B4100918497 /* ImageShowViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -245,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D78BBDF11D9FED1C00296A08 /* ShowDetailViewController.m in Sources */,
+				AE7B58CB1DA10B4100918497 /* ImageShowViewController.m in Sources */,
 				D71B37DF1D86BEAC00E353D4 /* AppDelegate.m in Sources */,
 				D71B37DC1D86BEAC00E353D4 /* main.m in Sources */,
 				AEC5FDBE1D8B45D70008E082 /* CastingCell.m in Sources */,
