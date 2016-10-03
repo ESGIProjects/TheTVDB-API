@@ -121,11 +121,7 @@
                                 <rect key="frame" x="0.0" y="92" width="768" height="108"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="25C-Mc-Ksm" id="A5y-MS-z8e">
-<<<<<<< HEAD
                                     <frame key="frameInset" width="375" height="107.5"/>
-=======
-                                    <frame key="frameInset" width="768" height="107"/>
->>>>>>> 15eb800048fb63df860e663fdd297de7f527fd9d
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -160,11 +156,7 @@
                                 <rect key="frame" x="0.0" y="92" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0kW-zA-cyV" id="CQh-o5-LDJ">
-<<<<<<< HEAD
                                     <frame key="frameInset" width="375" height="43.5"/>
-=======
-                                    <frame key="frameInset" width="768" height="43"/>
->>>>>>> 15eb800048fb63df860e663fdd297de7f527fd9d
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -271,11 +263,7 @@
                                 <rect key="frame" x="0.0" y="358" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="giR-KZ-kGW" id="0W7-I3-QSp">
-<<<<<<< HEAD
                                     <frame key="frameInset" width="375" height="43.5"/>
-=======
-                                    <frame key="frameInset" width="768" height="43"/>
->>>>>>> 15eb800048fb63df860e663fdd297de7f527fd9d
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -485,7 +473,6 @@
         <!--Favorites-->
         <scene sceneID="vgs-Kw-Jin">
             <objects>
-<<<<<<< HEAD
                 <tableViewController id="dSR-gO-Uu6" customClass="TVShowListViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="ebZ-9z-qgE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -497,19 +484,6 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DKm-bq-IJx" id="5tB-7D-L1C">
                                     <frame key="frameInset" width="375" height="107.5"/>
-=======
-                <tableViewController id="ldj-eh-dzu" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="uP8-Ki-E7a">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tvShow" id="t1d-7P-RaM" customClass="NameCell">
-                                <rect key="frame" x="0.0" y="92" width="768" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t1d-7P-RaM" id="914-fc-1Qn">
-                                    <frame key="frameInset" width="768" height="99"/>
->>>>>>> 15eb800048fb63df860e663fdd297de7f527fd9d
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
