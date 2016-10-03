@@ -10,6 +10,7 @@
 #import "TVShowDetailViewController.h"
 
 @interface ShowDetailViewController()
+@property (weak, nonatomic) IBOutlet UITextView *overview;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @end
 
@@ -18,10 +19,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configureTVShow:self.delegate.tvShow];
 }
 
 - (IBAction)favoriteButton:(UIButton*)sender {
-    BOOL favorite = self.delegate.tvShow.favorite;
+    BOOL favorite = NO;
     
     if (favorite) {
         [sender setImage:[UIImage imageNamed:@"Star"] forState:UIControlStateNormal];
@@ -29,8 +31,6 @@
     else {
         [sender setImage:[UIImage imageNamed:@"Star-Filled"] forState:UIControlStateNormal];
     }
-    
-    self.delegate.tvShow.favorite = !favorite;
 }
 
 - (IBAction)rateButton {
@@ -39,6 +39,14 @@
 
 - (IBAction)imagesButton {
     
+}
+
+- (void)configureTVShow:(TVShow *)tvshow {
+    NSLog(@"%@", tvshow);
+    NSLog(@"%@", tvshow.overview);
+    NSLog(@"%@", self.overview);
+    NSLog(@"%@", self.overview.text);
+    self.overview.text = tvshow.overview;
 }
 
 @end

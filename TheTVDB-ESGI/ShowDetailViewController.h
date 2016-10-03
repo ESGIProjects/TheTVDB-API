@@ -13,4 +13,6 @@
     __weak TVShowDetailViewController* _delegate;
 }
 @property(weak, nonatomic) TVShowDetailViewController* delegate;
+
+-(void)configureTVShow:(TVShow*)tvshow;
 @end

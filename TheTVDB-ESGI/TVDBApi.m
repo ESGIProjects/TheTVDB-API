@@ -57,8 +57,29 @@ static NSString* API_KEY = @"C81A0DBC502DD6C8";
 
 + (void)getLastUpdatedSeriesWithCompletion:(void (^)(NSData* data, NSURLResponse* response, NSError* error))completion {
     // Infos nécessaires
-    NSTimeInterval lastWeek = [[NSDate dateWithTimeIntervalSinceNow:(-60*60)] timeIntervalSince1970];
-    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.thetvdb.com/updated/query?fromTime=%.0f", lastWeek]];
+    NSTimeInterval yesterday = [[NSDate dateWithTimeIntervalSinceNow:(-60*30)] timeIntervalSince1970];
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.thetvdb.com/updated/query?fromTime=%.0f", yesterday]];
+    NSString* token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    
+    // Vérification du token avant de continuer
+    if (token) {
+        NSURLSession* session = [NSURLSession sharedSession];
+        NSMutableURLRequest* urlRequest = [NSMutableURLRequest requestWithURL:url];
+        [urlRequest setHTTPMethod:@"GET"];
+        [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        [urlRequest setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
+        
+        NSURLSessionDataTask* task = [session dataTaskWithRequest:urlRequest completionHandler:completion];
+        [task resume];
+    }
+    else {
+        NSLog(@"Token is missing");
+    }
+}
+
++ (void)getFavoritesWithCompletion:(void (^)(NSData* data, NSURLResponse* response, NSError* error))completion {
+    // Infos nécessaires
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.thetvdb.com/user/favorites"]];
     NSString* token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     
     // Vérification du token avant de continuer
@@ -78,9 +99,9 @@ static NSString* API_KEY = @"C81A0DBC502DD6C8";
 }
 
 + (void)getTVShowWithId:(NSNumber*)identifier completionHandler:(void (^)(NSData *, NSURLResponse *, NSError *))completion {
-    NSLog(@"%ld", [identifier longValue]);
+    NSLog(@"%d", [identifier intValue]);
     
-    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.thetvdb.com/series/%ld", [identifier longValue]]];
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.thetvdb.com/series/%d", [identifier intValue]]];
     NSString* token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     
     // Vérification du token avant de continuer
@@ -98,6 +119,15 @@ static NSString* API_KEY = @"C81A0DBC502DD6C8";
     else {
         NSLog(@"Token is missing");
     }
+}
+
++(UIImage*)loadImageWithURL:(NSURL*)url {
+    NSData* data = [[NSData alloc] initWithContentsOfURL:url];
+    
+    if (data != nil) {
+        return [UIImage imageWithData:data];
+    }
+    return nil;
 }
 
 + (void)getEpisodesWithTVShowId:(NSNumber *)identifier completionHandler:(void (^)(NSData *, NSURLResponse *, NSError *))completion {

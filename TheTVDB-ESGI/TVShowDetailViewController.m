@@ -34,6 +34,7 @@
 
 -(void)addSubview:(UIView*)subView toParentView:(UIView*)parentView {
     [parentView addSubview:subView];
+    [subView sizeToFit];
     [parentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[subView]|" options:0 metrics:0 views:@{@"subView":subView}]];
     [parentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[subView]|" options:0 metrics:0 views:@{@"subView":subView}]];
 }
@@ -68,10 +69,12 @@
     
     if ([identifier isEqualToString:@"showRating"])
         ((ShowRatingViewController*)newViewController).delegate = self;
-    else
+    
+    if ([identifier isEqualToString:@"showDetail"])
         ((ShowDetailViewController*)newViewController).delegate = self;
     
     newViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
+    
     if (self.currentViewController)
         [self cycleFromViewController:self.currentViewController toViewController:newViewController];
     else {

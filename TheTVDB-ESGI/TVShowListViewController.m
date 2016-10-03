@@ -13,6 +13,7 @@
 #import "NameCell.h"
 
 @interface TVShowListViewController ()
+@property (nonatomic) IBInspectable NSString* fetchMode;
 @end
 
 @implementation TVShowListViewController
@@ -20,10 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.tvShows = [[NSMutableArray alloc] initWithArray:@[@"Friends",@"How I Met Your Mother",@"South Park",@"Suits",@"Simpsons"]];
-    //self.tvGenre = [[NSMutableArray alloc] initWithArray:@[@"Comedy",@"Comedy",@"Animation",@"Drama",@"Comedy"]];
         
     [self.tableView registerNib:[UINib nibWithNibName:@"NameCell" bundle:nil] forCellReuseIdentifier:@"NameCell"];
+    
+    
+    NSLog(@"%@", self.fetchMode);
     
     [self updateTableViewData];
 }
@@ -75,13 +77,12 @@
 #pragma mark - Helper
 
 - (void)updateTableViewData {
-    [TVDBApi getLastUpdatedSeriesWithCompletion: ^(NSData* data, NSURLResponse* response, NSError* error) {
+    
+    void (^lastUpdated)() = ^(NSData* data, NSURLResponse* response, NSError* error) {
         if (data) {
-            NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+            NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
             if (json) {
                 NSMutableArray* idArray = [NSMutableArray new];
-                
-                //NSLog(@"%@", json[@"data"]);
                 
                 for (NSDictionary* dictionnary in json[@"data"]) {
                     TVShow* tvShow = [[TVShow alloc] initWithId:dictionnary[@"id"]];
@@ -89,8 +90,6 @@
                 }
                 
                 self.tvShows = idArray;
-                
-                //NSLog(@"%@", self.tvShows);
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.tableView reloadData];
@@ -107,7 +106,43 @@
         else {
             NSLog(@"%@", error.localizedDescription);
         }
-    }];
+    };
+    
+    void (^favorites)() = ^(NSData* data, NSURLResponse* response, NSError* error) {
+        if (data) {
+            NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+            if (json) {
+                NSMutableArray* idArray = [NSMutableArray new];
+                
+                for (NSNumber* favorites in json[@"data"][@"favorites"]) {
+                    TVShow* tvShow = [[TVShow alloc] initWithId:favorites];
+                    [idArray addObject:tvShow];
+                }
+                
+                self.tvShows = idArray;
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.tableView reloadData];
+                    
+                    for (int i = 0; i < [self.tvShows count]; i++) {
+                        [self updateCellAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+                    }
+                });
+            }
+            else {
+                NSLog(@"%@", error.localizedDescription);
+            }
+        }
+        else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    };
+    
+    if ([self.fetchMode isEqualToString:@"lastUpdated"])
+        [TVDBApi getLastUpdatedSeriesWithCompletion:lastUpdated];
+    
+    if ([self.fetchMode isEqualToString:@"favorites"])
+        [TVDBApi getFavoritesWithCompletion:favorites];
 }
 
 - (void) updateCellAtIndexPath:(NSIndexPath*)indexPath {
@@ -133,7 +168,6 @@
                     
                     if (data != nil) {
                         dispatch_async(dispatch_get_main_queue(), ^{
-                            //NSLog(@"ERROR");
                             UIImage* image = [UIImage imageWithData:data];
                             tvShow.thumbnail = image;
                             

@@ -15,7 +15,7 @@
 @synthesize overview = _overview;
 @synthesize genre = _genre;
 @synthesize thumbnail = _thumbnail;
-@synthesize favorite = _favorite;
+@synthesize thumbnailUrl = _thumbnailUrl;
 @synthesize loaded = _loaded;
 
 - (id)initWithId:(NSNumber*)identifier {

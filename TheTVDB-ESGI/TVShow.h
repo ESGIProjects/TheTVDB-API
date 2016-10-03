@@ -14,10 +14,11 @@
     NSString* _name;
     NSString* _overview;
     NSArray* _genre;
+    
     UIImage* _thumbnail;
     
-    BOOL _favorite;
     BOOL _loaded;
+    NSString* _thumbnailUrl;
 }
 
 @property(strong, nonatomic) NSNumber* showId;
@@ -25,7 +26,7 @@
 @property(strong, nonatomic) NSString* overview;
 @property(strong, nonatomic) NSArray* genre;
 @property(strong, nonatomic) UIImage* thumbnail;
-@property(assign, nonatomic) BOOL favorite;
+@property(strong, nonatomic) NSString* thumbnailUrl;
 @property(assign, nonatomic) BOOL loaded;
 
 -(id)initWithId:(NSNumber*)identifier;

@@ -6,13 +6,15 @@
 //  Copyright © 2016 Jason Pierna. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface TVDBApi : NSObject
 +(NSURLSessionDataTask*)dataTaskWithString:(NSString*)string andParameters:(NSDictionary*)parameters completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler;
 
 +(void)authenticateWithUsername:(NSString*)username andUserKey:(NSString*)userkey completionHandler:(void (^)(NSData* data, NSURLResponse* response, NSError* error))completion;
 +(void)getLastUpdatedSeriesWithCompletion:(void (^)(NSData* data, NSURLResponse* response, NSError* error))completion;
++ (void)getFavoritesWithCompletion:(void (^)(NSData* data, NSURLResponse* response, NSError* error))completion;
 +(void)getTVShowWithId:(NSNumber*)identifier completionHandler:(void (^)(NSData* data, NSURLResponse* response, NSError* error))completion;
++(UIImage*)loadImageWithURL:(NSURL*)url;
 +(void)getEpisodesWithTVShowId:(NSNumber*)identifier completionHandler:(void (^)(NSData* data, NSURLResponse* response, NSError* error))completion;
 @end
