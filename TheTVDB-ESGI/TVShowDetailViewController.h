@@ -19,5 +19,6 @@
 @property(weak, nonatomic) UIViewController* currentViewController;
 
 -(void)showContainerWithIdentifier:(NSString*)identifier;
+- (void)showImageController;
 
 @end

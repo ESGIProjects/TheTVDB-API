@@ -9,6 +9,7 @@
 #import "TVShowDetailViewController.h"
 #import "ShowDetailViewController.h"
 #import "ShowRatingViewController.h"
+#import "ImageShowViewController.h"
 
 @interface TVShowDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIView *containerView;
@@ -24,6 +25,13 @@
     self.title = self.tvShow.name;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
     [self showContainerWithIdentifier:@"showDetail"];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"segueToImage"]) {
+        ImageShowViewController* destinationViewController = segue.destinationViewController;
+        destinationViewController.tvShow = self.tvShow;
+    }
 }
 
 - (IBAction)castButton:(id)sender {
@@ -82,6 +90,10 @@
         [self addSubview:newViewController.view toParentView:self.containerView];
     }
     self.currentViewController = newViewController;
+}
+
+- (void)showImageController {
+    [self performSegueWithIdentifier:@"segueToImage" sender:nil];
 }
 
 @end

@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TVShow.h"
 
 @interface ImageShowViewController : UICollectionViewController {
+    TVShow* _tvShow;
     NSMutableArray* _imagesShow;
 }
-
+@property(strong, nonatomic) TVShow* tvShow;
 @property(strong, nonatomic) NSMutableArray* imagesShow;;
 
 @end

@@ -169,7 +169,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4Y-jH-wKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5842" y="-188"/>
+            <point key="canvasLocation" x="5259" y="247"/>
         </scene>
         <!--Image Show View Controller-->
         <scene sceneID="0Yg-Mh-jfI">
@@ -180,26 +180,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PvG-sg-ewz">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="150" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="wsE-M6-X34">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="wsE-M6-X34" customClass="ImageCell">
+                                <rect key="frame" x="10" y="10" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XjI-xx-lMs">
-                                            <frame key="frameInset" minX="2" minY="11" width="240" height="128"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                    </subviews>
                                 </view>
-                                <size key="customSize" width="100" height="100"/>
+                                <size key="customSize" width="150" height="150"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -210,7 +204,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gY5-FI-zt0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6369" y="609"/>
+            <point key="canvasLocation" x="5259" y="-569"/>
         </scene>
         <!--Last updated-->
         <scene sceneID="Wzb-x2-f2B">
@@ -284,6 +278,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="containerView" destination="pt3-0l-DW5" id="e15-TL-tCJ"/>
+                        <segue destination="c7z-m7-FK3" kind="show" identifier="segueToImage" id="MwD-i1-plI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4k-9N-0HS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -365,7 +360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="siD-iV-nFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4406" y="488"/>
+            <point key="canvasLocation" x="4407" y="549"/>
         </scene>
         <!--Show Rating View Controller-->
         <scene sceneID="IJ6-1k-Dqk">
@@ -423,7 +418,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Kk-XR-KfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5111" y="487"/>
+            <point key="canvasLocation" x="4406" y="1277"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4c0-z7-L9x">

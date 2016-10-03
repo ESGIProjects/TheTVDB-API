@@ -7,13 +7,15 @@
 //
 
 #import "ImageShowViewController.h"
+#import "ImageCell.h"
+#import "TVDBApi.h"
 
 @interface ImageShowViewController () 
 
 @end
 
 @implementation ImageShowViewController
-
+@synthesize tvShow = _tvShow;
 @synthesize imagesShow = _imagesShow;
 
 static NSString * const reuseIdentifier = @"Cell";
@@ -21,12 +23,9 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.collectionView registerClass:[ImageCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    
+    [self updateCollectionView];
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -37,13 +36,14 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 0;
+    return [self.imagesShow count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    ImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    // Configure the cell
+    UIImage* image = self.imagesShow[indexPath.item];
+    cell.imageView.image = image;
     
     return cell;
 }
@@ -54,22 +54,26 @@ static NSString * const reuseIdentifier = @"Cell";
 	return YES;
 }
 
+#pragma mark - Helpers
 
-
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
+- (void) updateCollectionView {
+    [TVDBApi getImageQueryWithId:self.tvShow.showId completionHandler:^(NSData* data, NSURLResponse* response, NSError* error) {
+        if (data) {
+            NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+            if (json) {
+                NSDictionary* dataDict = json[@"data"];
+                [dataDict enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
+                    NSLog(@"%@ - %d", (NSString*)key, [((NSNumber*)value) intValue]);
+                }];
+            }
+            else {
+                NSLog(@"%@", error.localizedDescription);
+            }
+        }
+        else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 }
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end

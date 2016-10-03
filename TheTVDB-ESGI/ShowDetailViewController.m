@@ -38,7 +38,7 @@
 }
 
 - (IBAction)imagesButton {
-    
+    [self.delegate showImageController];
 }
 
 - (void)configureTVShow:(TVShow *)tvshow {
